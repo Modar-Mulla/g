@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'playground/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'playground/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'playground/css/bootstrap.min.css' %}">
+  <title>Homework</title>
+</head>
+
+<body>
+  <nav class="navbar bg-body-tertiary bg-primary text-center" data-bs-theme="dark">
+    <div class="container-fluid justify-content-center">
+      <span class="navbar-brand mb-0 h1 text-white text-center">Homework</span>
+    </div>
+  </nav>
+  <div class="wrapper container d-flex justify-content-center align-items-center">
+    <div class="graph-img text-center">
+      <img src="{% static 'playground/images/graph.png' %}" class="img-fluid text-center" alt="Responsive image">
+    </div>
+    <div class="input-fields container d-flex justify-content-center pt-5 pb-5">
+      <form class="w-50 d-flex flex-column justify-content-center align-items-center">
+        <div class="mb-3">
+          <label for="popultaionSZ" class="form-label">popultaionSZ</label>
+          <input type="number" min="0" class="form-control" id="popultaionSZ" placeholder="Input popultaionSZ">
+        </div>
+        <div class="mb-3">
+          <label for="maxIter" class="form-label">maxIter</label>
+          <input type="number" min="0" class="form-control" id="maxIter" placeholder="maxIter">
+        </div>
+        <div class="mb-3">
+          <label for="candidatesol" class="form-label">candidatesol</label>
+          <input type="number" min="0" class="form-control" id="candidatesol" placeholder="Input candidatesol">
+        </div>
+        <button id="post" type="submit" class="btn btn-outline-primary btn-lg w-50">Start</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Results</h5>
+          <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <span id="backdrop" style="position: absolute; width: 100%;
+  height: 130vh;background-color: black;z-index: 100;left: 0;top: 0;opacity: 0.5;display: none;"></span>
+  {% load static %}
+  <script src="{% static 'playground/js/post.js' %}"></script>
+</body>
+
+</html>
